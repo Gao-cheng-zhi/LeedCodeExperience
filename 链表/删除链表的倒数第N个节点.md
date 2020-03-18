@@ -44,7 +44,7 @@ class Solution {
     
     
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        int length=this.len(head);
+        int length = this.len(head);
         ListNode temp = head;
         int currentPos = 0;
         
@@ -116,4 +116,6 @@ class Solution {
 }
 ```
 
-> 这个乍一看很反常，但是实验一下确实是对的，但是我不明白slow是怎么影响head？
+> 这个乍一看很反常，但是实验一下确实是对的，但是我不明白 slow 是怎么影响 head？
+>
+> 后来一想 class 天生就是引用值嘛。。
