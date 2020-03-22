@@ -26,7 +26,7 @@ return its depth = 3.
 Mine
 ----
 
-``` {.java}
+``` java
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -54,7 +54,7 @@ Discussion
 
 第一种方法：BFS广度优先搜索，使用双端队列deque（因为性能比另外两种Queue好得多），在大循环内对二叉树的每个层做一次遍历，`range(len(queue))`使只遍历当前的层，每次大循环`ans`加1。由于每个节点仅访问一次，所以时间复杂度`O(n)`
 
-``` {.python}
+``` python
 import collections
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
@@ -76,7 +76,7 @@ class Solution:
 
 第二种方法：DFS深度优先搜索，利用递归的栈，借助`level`标记当前层，由于每个节点仅访问一次，所以时间复杂度`O(n)`
 
-``` {.python}
+``` python
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
         if not root:
@@ -96,7 +96,7 @@ class Solution:
 
 第三种方法：DFS+分治，虽然代码简洁但耗时比上面两种方法都久
 
-``` {.python}
+``` python
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
         if not root:
@@ -145,7 +145,7 @@ Assume a BST is defined as follows:
 
 **Example 1:**
 
-``` {.java}
+``` java
     2
    / \
   1   3
@@ -156,7 +156,7 @@ Output: true
 
 **Example 2:**
 
-``` {.java}
+``` java
     5
    / \
   1   4
@@ -176,7 +176,7 @@ I can't solve that😅
 Discussion
 ----------
 
-``` {.java}
+``` java
 class Solution {
     public boolean helper(TreeNode node, Integer lower, Integer upper) {
         if (node == null)
@@ -203,7 +203,7 @@ class Solution {
 
 > 官方答案，很妙，但是凭空我是想不起来的。
 
-``` {.java}
+``` java
 //如果不用递归，而用栈实现前序：
 
 class Solution {
@@ -269,12 +269,12 @@ INT\_MAX (231 − 1) or INT\_MIN (−231) is returned.
 
 > Example
 
-``` {.java}
+``` java
 Input: "42"
 Output: 42
 ```
 
-``` {.java}
+``` java
 Input: "   -42"
 Output: -42
 Explanation: The first non-whitespace character is '-', which is the minus sign.
@@ -284,7 +284,7 @@ Explanation: The first non-whitespace character is '-', which is the minus sign.
 俺不会写（2 ms）
 ----------------
 
-``` {.java}
+``` java
 class Solution {
     public int myAtoi(String str) {
     str = str.trim();  
@@ -336,7 +336,7 @@ valid palindrome.
 
 > Example
 
-``` {.java}
+``` java
 Input: "A man, a plan, a canal: Panama"
 Output: true
 ```
@@ -344,7 +344,7 @@ Output: true
 我的（39 ms 😆 ）
 ----------------
 
-``` {.java}
+``` java
 class Solution {
     public boolean isPalindrome(String s) {
           if (s.length()<2){
@@ -370,7 +370,7 @@ class Solution {
 2ms
 ---
 
-``` {.java}
+``` java
 class Solution {
     public boolean isPalindrome(String s) {
         int i = 0;
@@ -411,7 +411,7 @@ class Solution {
 4 ms
 ----
 
-``` {.java}
+``` java
 class Solution {
      public boolean isPalindrome(String s) {
         int i = 0, j = s.length() - 1;
@@ -450,7 +450,7 @@ You may assume all the characters consist of printable ascii characters
 我的（ 1 ms ）
 --------------
 
-``` {.java}
+``` java
 public void reverseString(char[] s) {
         char tem='a';
         for (int i=0;i<s.length/2;i++){
@@ -466,7 +466,7 @@ public void reverseString(char[] s) {
 1 ms
 ----
 
-``` {.java}
+``` java
 class Solution {
     public void reverseString(char[] s) {
         int i = 0, j = s.length -1;
@@ -492,7 +492,7 @@ five terms as following:
 
 > Example
 
-``` {.java}
+``` java
 1.     1
 2.     11
 3.     21
@@ -514,7 +514,7 @@ string.
 我的（14 ms）
 -------------
 
-``` {.java}
+``` java
 String countAndSay(int n){
         if (n==1){
             return "1";
@@ -568,7 +568,7 @@ String countAndSay(int n){
 0 ms
 ----
 
-``` {.java}
+``` java
 public class Solution {
     public String countAndSay(int n) {
         switch (n) {
@@ -645,7 +645,7 @@ public class Solution {
 1 ms
 ----
 
-``` {.java}
+``` java
 class Solution {
     public String countAndSay(int n) {
 
@@ -712,7 +712,7 @@ Example
 
     s = "leetcode"
     return 0.
-
+    
     s = "loveleetcode",
     return 2.
 
@@ -721,7 +721,7 @@ Example
 我的（ 2 ms ）
 --------------
 
-``` {.java}
+``` java
 public int firstUniqChar(String s) {
         int len = s.length();
         for (char k = 'a'; k <= 'z'; k++) {
@@ -744,7 +744,7 @@ public int firstUniqChar(String s) {
 官方
 ----
 
-``` {.java}
+``` java
 public int firstUniqChar(String s) {
         HashMap<Character, Integer> map = new HashMap<Character, Integer>();
         int n = s.length();
@@ -776,12 +776,12 @@ needle is not part of haystack.
 
 > Example
 
-``` {.java}
+``` java
 Input: haystack = "hello", needle = "ll"
 Output: 2
 ```
 
-``` {.java}
+``` java
 Input: haystack = "aaaaa", needle = "bba"
 Output: -1           
 ```
@@ -795,7 +795,7 @@ Output: -1
 俺的（0 ms）
 ------------
 
-``` {.java}
+``` java
 class Solution {
    public int strStr(String haystack, String needle) {
         if ( needle == "" ) {
@@ -812,7 +812,7 @@ class Solution {
 1 ms
 ----
 
-``` {.java}
+``` java
 class Solution {
     public int strStr(String haystack, String needle) {
         if (haystack != null && needle != null) {
@@ -843,7 +843,7 @@ substring() 方法返回字符串的子字符串。
 
 #### 语法
 
-``` {.java}
+``` java
 public String substring(int beginIndex)
 
 或
@@ -853,7 +853,7 @@ public String substring(int beginIndex, int endIndex)
 
 #### 参数
 
-``` {.java}
+``` java
 beginIndex -- 起始索引（包括）, 索引从 0 开始。
 
 endIndex -- 结束索引（不包括）。
@@ -861,7 +861,7 @@ endIndex -- 结束索引（不包括）。
 
 #### 例子
 
-``` {.java}
+``` java
 public class Test {
     public static void main(String args[]) {
         String Str = new String("www.runoob.com");
@@ -891,10 +891,10 @@ Example
 
     Input: 123
     Output: 321
-
+    
     Input: -123
     Output: -321
-
+    
     Input: 120
     Output: 21
 
@@ -906,7 +906,7 @@ store integers within the 32-bit signed integer range: \[−231, 231 −
 我的（ 3 ms ）
 --------------
 
-``` {.java}
+``` java
 public int reverse(int x) {
         if (x > 2147483647||x <= -2147483648){
             return 0;//防止输入溢出
@@ -942,7 +942,7 @@ public int reverse(int x) {
 1 ms
 ----
 
-``` {.java}
+``` java
 class Solution {
     public int reverse(int x) {
         int rev = 0;
@@ -966,7 +966,7 @@ class Solution {
 2 ms （谁都不服就服你！）
 -------------------------
 
-``` {.java}
+``` java
 class Solution {
     public int reverse(int x) {
        long n = 0;
@@ -990,12 +990,12 @@ array of strings.
 
 If there is no common prefix, return an empty string \"\". \> Example
 
-``` {.java}
+``` java
 Input: ["flower","flow","flight"]
 Output: "fl"
 ```
 
-``` {.java}
+``` java
 Input: ["dog","racecar","car"]
 Output: ""
 Explanation: There is no common prefix among the input strings.
@@ -1008,7 +1008,7 @@ All given inputs are in lowercase letters a-z
 我写不出来（0 ms）
 ------------------
 
-``` {.java}
+``` java
 class Solution {
  public static String longestCommonPrefix(String[] strs) {
     int count = strs.length;
@@ -1043,7 +1043,7 @@ anagram of s.
 
 > Example
 
-``` {.java}
+``` java
 Input: s = "anagram", t = "nagaram"
 Output: true
 ```
@@ -1051,7 +1051,7 @@ Output: true
 我的（4 ms）
 ------------
 
-``` {.java}
+``` java
 public boolean isAnagram(String s, String t) {
         if (s.length()!=t.length()){
             return false;
@@ -1076,7 +1076,7 @@ public boolean isAnagram(String s, String t) {
 2ms
 ---
 
-``` {.java}
+``` java
 class Solution {
     public boolean isAnagram(String s, String t) {
         if(s == null || t == null || s.length() != t.length())
@@ -1112,7 +1112,7 @@ class Solution {
 
 **示例:**
 
-``` {.java}
+``` java
 输入:
 nums1 = [1,2,3,0,0,0], m = 3
 nums2 = [2,5,6],       n = 3
@@ -1123,7 +1123,7 @@ nums2 = [2,5,6],       n = 3
 Mine
 ----
 
-``` {.java}
+``` java
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         for (int i = 0; i < n; i++) {
@@ -1139,7 +1139,7 @@ class Solution {
 Standard Answer
 ---------------
 
-``` {.java}
+``` java
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int p1 = m - 1,p2 = n - 1,p = (n + m) - 1;
@@ -1153,7 +1153,7 @@ class Solution {
 
 > 倒着排序！关键在于`nums2[p2 --] : nums1[p1 --]`边录边减。
 
-``` {.java}
+``` java
 arrayCopy( arr1, 2, arr2, 5, 10);
 ```
 
@@ -1200,7 +1200,7 @@ Stupid man are always struggling ！！
 我的
 ----
 
-``` {.swift}
+``` swift
 func intersect(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
     
     var re1=nums1.sorted()
@@ -1273,7 +1273,7 @@ $$愚蠢的人总是事倍功半  —— Gaochengzhi$$
 24 ms
 -----
 
-``` {.swift}
+``` swift
 class Solution {
     func intersect(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
         var dict:[Int:Int] = [:]
@@ -1307,7 +1307,7 @@ class Solution {
 
 但是不知道为什么会慢很多
 
-``` {.swift}
+``` swift
 func intersect(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
     var result = [Int]()
     var tmp = [Int:Int]()
@@ -1349,7 +1349,7 @@ Example
 我的（ 800 ms ）
 ----------------
 
-``` {.swift}
+``` swift
 func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
         var sim = [0,0]
         for i in 0..<nums.count{
@@ -1369,7 +1369,7 @@ func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
 20 ms
 -----
 
-``` {.swift}
+``` swift
 class Solution {
     func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
         let count = nums.count
@@ -1416,7 +1416,7 @@ tradtional two-point solution
 我的：
 ------
 
-``` {.swift}
+``` swift
 class Solution {
         func maxProfit(_ prices: [Int]) -> Int {
         var i = 0 //    Slow point
@@ -1440,7 +1440,7 @@ class Solution {
 36 ms的解答
 -----------
 
-``` {.swift}
+``` swift
 class Solution {
         func maxProfit(_ prices: [Int]) -> Int {
             if prices.count <= 1 {
@@ -1464,7 +1464,7 @@ class Solution {
 优化
 ----
 
-``` {.swift}
+``` swift
  func maxProfit(_ prices: [Int]) -> Int {
     
     if prices.count == 0 {
@@ -1487,7 +1487,7 @@ class Solution {
 Java 我的提交
 -------------
 
-``` {.java}
+``` java
 class Solution {
     public int maxProfit(int[] prices) {
        int pro = 0;
@@ -1529,7 +1529,7 @@ Example
 我的
 ----
 
-``` {.swift}
+``` swift
 func plusOne(_ digits: [Int]) -> [Int] {
     var realdigits = digits
     
@@ -1563,7 +1563,7 @@ func plusOne(_ digits: [Int]) -> [Int] {
 网上找了几个思路都和我都差不多，性能也一模一样。\
 \#\# 4 ms
 
-``` {.swift}
+``` swift
 func plusOne(_ digits: [Int]) -> [Int] {
         if digits.count < 0 {
             return []
@@ -1611,7 +1611,7 @@ Get to learn something new ! exclusive OR
 我的
 ----
 
-``` {.swift}
+``` swift
    func singleNumber(_ nums: [Int]) -> Int {
         var returnNum = 0
         for i in 0..<nums.count{
@@ -1637,7 +1637,7 @@ Java
 　　注意：首先这个数组的长度肯定是奇数（目标数字只出现一次，其他所有数字出现两次），所以如果上述步骤没有找到不相等的一组数，那么肯定是数组的最后一个数字是单独出现的。
 　　
 
-``` {.java}
+``` java
  1　  public static int singleNumber(int[] nums) {
  2         Arrays.sort(nums);  // 排序数组
  3         for (int i = 0; i < nums.length - 1; i += 2) {
@@ -1655,7 +1655,7 @@ Java
 
 　　思路：利用HashSet的特性，删除重复的数组元素，最后剩下一个单独的元素，返回即可。
 
-``` {.java}
+``` java
 1   public static int singleNumber(int[] nums) {
 2         Set<Integer> set = new HashSet<>();
 3         for (int i = 0; i < nums.length; i++) {
@@ -1671,7 +1671,7 @@ Java
 　　思路：先对数组排序，显而易见的，单独出现一次的数据必然是出现在数组下标为偶数的位置（下标从0开始），那么所有奇数下标的元素之和减去偶数下标的元素之和，就是需要求得的结果。
 　　
 
-``` {.java}
+``` java
 1     public static int singleNumber(int[] nums) {
 2         int num = 0;
 3         Arrays.sort(nums);
@@ -1701,7 +1701,7 @@ Example
 我的
 ----
 
-``` {.swift}
+``` swift
 func containsDuplicate(_ nums: [Int]) -> Bool {
         let set = Set(nums)
         return set.count != nums.count
@@ -1733,7 +1733,7 @@ func containsDuplicate(_ nums: [Int]) -> Bool {
 
     > 由于集合里的值是不能重复的，多余的重复值将会被丢弃掉。
 
-``` {.swift}
+``` swift
     let array = ["apple", "apple", "orange"]
     let set = Set(array)
     print(set)
@@ -1746,7 +1746,7 @@ func containsDuplicate(_ nums: [Int]) -> Bool {
 168 ms
 ------
 
-``` {.swift}
+``` swift
 func containsDuplicate(_ nums: [Int]) -> Bool {
            if nums.count <= 1 {
             return false
@@ -1791,7 +1791,7 @@ Example
       [4,5,6],
       [7,8,9]
     ],
-
+    
     rotate the input matrix in-place such that it becomes:
     [
       [7,4,1],
@@ -1802,7 +1802,7 @@ Example
 我的（ 20 ms ）
 ---------------
 
-``` {.swift}
+``` swift
 func rotate(_ matrix: inout [[Int]]) {  
     var sub:Int = 0
     let len=matrix.count
@@ -1823,7 +1823,7 @@ func rotate(_ matrix: inout [[Int]]) {
 16 ms
 -----
 
-``` {.swift}
+``` swift
 func rotateImage1(_ matrix: inout [[Int]]) {
         let n = matrix.count
         for i in 0..<n/2 {
@@ -1840,7 +1840,7 @@ func rotateImage1(_ matrix: inout [[Int]]) {
 
 > 对于当前位置，计算旋转后的新位置，然后再计算下一个新位置，第四个位置又变成当前位置了，所以这个方法每次循环换四个数字。
 
-``` {.swift}
+``` swift
 1 2 3      7 2 1      7 4 1
 4 5 6 ->   4 5 6  ->  8 5 2
 7 8 9      9 8 3      9 6 3
@@ -1849,7 +1849,7 @@ func rotateImage1(_ matrix: inout [[Int]]) {
 还有一种
 --------
 
-``` {.swift}
+``` swift
 func rotate(_ matrix: inout [[Int]]) {
         let n = matrix.count
         for i in 0..<(n - 1) {
@@ -1892,7 +1892,7 @@ Using an alternative array is the most efficient and easy answer.
 我的
 ----
 
-``` {.swift}
+``` swift
 func rotate(_ nums: inout [Int], _ k: Int) {
         var B:Array=[Int](repeating: 0, count: nums.count)
         let j=k%nums.count
@@ -1927,7 +1927,7 @@ be validated according to the following rules:
 Example
 -------
 
-``` {.swift}
+``` swift
 Input:
 [
   ["5","3",".",".","7",".",".",".","."],
@@ -1946,7 +1946,7 @@ Output: true
 160 ms
 ------
 
-``` {.swift}
+``` swift
 class Solution {
     func isValidSudoku(_ board: [[Character]]) -> Bool {
         var rowNums = Array(repeating: 0, count: 9)
@@ -1997,7 +1997,7 @@ class Solution {
 
 > 如果指定 A = 60; 及 B = 13; 两个变量对应的二进制为：
 
-``` {.swift}
+``` swift
 A = 0011 1100
 
 B = 0000 1101
@@ -2007,7 +2007,7 @@ B = 0000 1101
 
 #### 枚举类型
 
-``` {.swift}
+``` swift
 typedef NS_OPTIONS(NSUInteger, NSRegularExpressionOptions) {
         NSRegularExpressionCaseInsensitive          = 1 << 0,   // 不区分大小写的
         NSRegularExpressionAllowCommentsAndWhitespace  = 1 << 1,   // 忽略空格和# (注释符)
@@ -2046,7 +2046,7 @@ Example
 我的（ 52 ms ）
 ---------------
 
-``` {.swift}
+``` swift
 func moveZeroes(_ nums: inout [Int]) {
     var length=nums.count
     var j=0
@@ -2066,7 +2066,7 @@ func moveZeroes(_ nums: inout [Int]) {
 40 ms
 -----
 
-``` {.swift}
+``` swift
 class Solution {
     func moveZeroes(_ nums: inout [Int]) {
         var idx = 0
@@ -2103,7 +2103,7 @@ Given linked list -- head = \[4,5,1,9\], which looks like following:
 
 **Example 1:**
 
-``` {.java}
+``` java
 Input: head = [4,5,1,9], node = 5
 Output: [4,1,9]
 Explanation: You are given the second node with value 5, the linked list should become 4 -> 1 -> 9 after calling your function.
@@ -2111,7 +2111,7 @@ Explanation: You are given the second node with value 5, the linked list should 
 
 **Example 2:**
 
-``` {.java}
+``` java
 Input: head = [4,5,1,9], node = 1
 Output: [4,5,9]
 Explanation: You are given the third node with value 1, the linked list should become 4 -> 5 -> 9 after calling your function.
@@ -2128,7 +2128,7 @@ Explanation: You are given the third node with value 1, the linked list should b
 俺的（没有时间统计）
 --------------------
 
-``` {.java}
+``` java
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -2158,7 +2158,7 @@ return its head.
 
 **Example:**
 
-``` {.java}
+``` java
 Given linked list: 1->2->3->4->5, and n = 2.
 
 After removing the second node from the end, 
@@ -2176,7 +2176,7 @@ Could you do this in one pass?
 Mine ( 2 ms \_(:з」∠)\_ )
 -------------------------
 
-``` {.java}
+``` java
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -2234,7 +2234,7 @@ class Solution {
 Standard Answer ( 0ms )
 -----------------------
 
-``` {.java}
+``` java
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -2293,7 +2293,7 @@ you implement both?
 Mine (0 ms)
 -----------
 
-``` {.java}
+``` java
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -2329,7 +2329,7 @@ $$
 Standard Answer
 ---------------
 
-``` {.java}
+``` java
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -2364,7 +2364,7 @@ should be made by splicing together the nodes of the first two lists.
 
 **Example:**
 
-``` {.java}
+``` java
 Input: 1->2->4, 1->3->4
 Output: 1->1->2->3->4->4
 ```
@@ -2372,7 +2372,7 @@ Output: 1->1->2->3->4->4
 Mine
 ----
 
-``` {.java}
+``` java
 class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(0);// 虚表头
@@ -2417,14 +2417,14 @@ Given a singly linked list, determine if it is a palindrome.
 
 **Example 1:**
 
-``` {.java}
+``` java
 Input: 1->2
 Output: false
 ```
 
 **Example 2:**
 
-``` {.java}
+``` java
 Input: 1->2->2->1
 Output: true
 ```
@@ -2436,7 +2436,7 @@ Output: true
 Mine
 ----
 
-``` {.java}
+``` java
 class Solution {
     public boolean isPalindrome(ListNode head) {
         int length = 0;
@@ -2479,7 +2479,7 @@ Standard Answer
 
 ### 这里个个都是人才啊！
 
-``` {.java}
+``` java
 class Solution {
     public boolean isPalindrome(ListNode head) {
          //1.判断是否是一个节点
@@ -2518,7 +2518,7 @@ class Solution {
 Answer 2
 --------
 
-``` {.java}
+``` java
 class Solution {
     public boolean isPalindrome(ListNode head) {
         if(head == null){
@@ -2626,7 +2626,7 @@ Can you solve it using *O(1)* (i.e. constant) memory?
 Mine
 ----
 
-``` {.java}
+``` java
 /**
  * Definition for singly-linked list.
  * class ListNode {
@@ -2690,7 +2690,7 @@ bool hasCycle(struct ListNode *head) {
 
 ### \" 我帮你们测试好了，样例最多的有8029个数据 \"
 
-``` {.java}
+``` java
 public class Solution {
     public boolean hasCycle(ListNode head) {
         int count=8029;
